@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="content/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="mode-toggle" onclick="toggleMode()">
+                <span class="mode-icon" id="mode-icon">☀️</span>
+                <span id="mode-text">Light</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <section class="hero">
+            <!-- Animated Glass Blobs -->
+            <div class="glass-blob blob-1"></div>
+            <div class="glass-blob blob-2"></div>
+            <div class="glass-blob blob-3"></div>
+
+            <!-- Contact Page Content -->
+            <div class="page-content">
+                <h2>Contact Coming Soon</h2>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Light/Dark mode toggle
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+            const modeText = document.getElementById('mode-text');
+            const modeIcon = document.getElementById('mode-icon');
+            
+            if (document.body.classList.contains('light-mode')) {
+                modeText.textContent = 'Dark';
+                modeIcon.textContent = '🌙';
+            } else {
+                modeText.textContent = 'Light';
+                modeIcon.textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>

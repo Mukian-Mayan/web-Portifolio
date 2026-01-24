@@ -1,0 +1,600 @@
+/* ===================================
+   PORTFOLIO GLASS EFFECT STYLESHEET
+   Created: January 2026
+   =================================== */
+
+/* ===================================
+   1. RESET & BASE STYLES
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+/* ===================================
+   2. NAVIGATION BAR (SHARED)
+   =================================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: clamp(0.8rem, 2vw, 1.5rem) clamp(1.5rem, 4vw, 3rem);
+    transition: all 0.3s ease;
+}
+
+body.light-mode nav {
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+body.light-mode .nav-links a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+body.light-mode .nav-links a:hover {
+    color: #8a2be2;
+}
+
+/* Nav Link Underline Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #8a2be2;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Mode Toggle Button */
+.mode-toggle {
+    background: rgba(138, 43, 226, 0.2);
+    border: 2px solid rgba(138, 43, 226, 0.4);
+    color: #fff;
+    padding: clamp(0.5rem, 1.2vw, 0.7rem) clamp(1rem, 2.5vw, 1.5rem);
+    border-radius: clamp(1.5rem, 3vw, 2rem);
+    cursor: pointer;
+    font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+body.light-mode .mode-toggle {
+    background: rgba(138, 43, 226, 0.15);
+    border: 2px solid rgba(138, 43, 226, 0.3);
+    color: #1a1a1a;
+}
+
+.mode-toggle:hover {
+    background: #8a2be2;
+    border-color: #8a2be2;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+}
+
+body.light-mode .mode-toggle:hover {
+    color: #fff;
+}
+
+.mode-icon {
+    font-size: 1.2em;
+}
+
+/* ===================================
+   3. CONTAINER & LAYOUT (SHARED)
+   =================================== */
+
+.container {
+    max-width: 95vw;
+    margin: 0 auto;
+    padding: 3vw;
+    padding-top: clamp(5rem, 10vw, 8rem);
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================================
+   4. GLASS BLOBS (SHARED BACKGROUND)
+   =================================== */
+
+.glass-blob {
+    position: absolute;
+    background: rgba(138, 43, 226, 0.15);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 50% 40% 60% 50%;
+    animation: morph 20s ease-in-out infinite;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+body.light-mode .glass-blob {
+    background: rgba(138, 43, 226, 0.08);
+    border: 1px solid rgba(138, 43, 226, 0.15);
+}
+
+.blob-1 {
+    width: 40vw;
+    height: 40vw;
+    top: 10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 35vw;
+    height: 35vw;
+    bottom: 5%;
+    right: -5%;
+    animation-delay: -7s;
+    background: rgba(138, 43, 226, 0.1);
+}
+
+.blob-3 {
+    width: 25vw;
+    height: 25vw;
+    top: 50%;
+    right: 20%;
+    animation-delay: -14s;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 50% 40% 60% 50%;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        border-radius: 40% 60% 50% 60%;
+        transform: translate(2vw, 2vh) rotate(90deg);
+    }
+    50% {
+        border-radius: 60% 50% 40% 50%;
+        transform: translate(-2vw, 2vh) rotate(180deg);
+    }
+    75% {
+        border-radius: 50% 60% 50% 40%;
+        transform: translate(-2vw, -2vh) rotate(270deg);
+    }
+}
+
+/* ===================================
+   5. INDEX PAGE SPECIFIC STYLES
+   =================================== */
+
+/* Grid Layout for Home Content */
+.content {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* Title Section */
+.title-section {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+body.light-mode h1 {
+    background: linear-gradient(135deg, #1a1a1a 0%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: clamp(1.3rem, 3.5vw, 2.5rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+body.light-mode .subtitle {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Card Positioning */
+.card-1 {
+    grid-column: 2;
+    grid-row: 1 / 2;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.card-stack {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Glass Card Styles */
+.glass-card {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: clamp(1rem, 2vw, 1.5rem);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .glass-card {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.08) 0%,
+        rgba(0, 0, 0, 0.03) 50%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Animated Border Effect */
+.glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(138, 43, 226, 0.7) 15%,
+        rgba(255, 255, 255, 0.2) 35%,
+        rgba(138, 43, 226, 0.4) 50%,
+        rgba(255, 255, 255, 0.1) 65%,
+        rgba(138, 43, 226, 0.6) 85%,
+        rgba(255, 255, 255, 0.5) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderMove 3s linear infinite, borderSmirk 4s ease-in-out infinite;
+    opacity: 0.7;
+    filter: blur(1px);
+}
+
+@keyframes borderMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+@keyframes borderSmirk {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.005);
+    }
+}
+
+/* Special Border Radius for Card 1 & 2 */
+.card-1,
+.card-2 {
+    border-radius: 0;
+}
+
+.card-1 {
+    border-top-left-radius: clamp(3rem, 6vw, 5rem);
+    border-bottom-right-radius: clamp(3rem, 6vw, 5rem);
+}
+
+.card-2 {
+    border-top-left-radius: clamp(3rem, 6vw, 5rem);
+    border-bottom-right-radius: clamp(3rem, 6vw, 5rem);
+}
+
+.glass-card:hover {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
+    border-color: rgba(138, 43, 226, 0.4);
+    transform: translateY(-2px);
+}
+
+.glass-card h3 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    color: #8a2be2;
+    position: relative;
+    z-index: 1;
+}
+
+.glass-card p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+body.light-mode .glass-card p {
+    color: rgba(0, 0, 0, 0.75);
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: #8a2be2;
+    cursor: pointer;
+    font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    color: #fff;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active::after {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown-content.active {
+    max-height: 500px;
+}
+
+.dropdown-content p {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
+    background: #8a2be2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: clamp(0.5rem, 1.5vw, 0.8rem);
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(138, 43, 226, 0.5);
+    margin-top: 1rem;
+}
+
+.cta-button:hover {
+    background: rgba(138, 43, 226, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
+}
+
+/* Staggered Animations */
+.content > * {
+    animation: fadeInUp 1s ease-out backwards;
+}
+
+.title-section {
+    animation-delay: 0.2s;
+}
+
+.card-1 {
+    animation-delay: 0.4s;
+}
+
+.card-2 {
+    animation-delay: 0.6s;
+}
+
+.card-stack {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   6. PROJECTS PAGE SPECIFIC STYLES
+   =================================== */
+
+.page-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-content h2 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    background: linear-gradient(135deg, #fff 0%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-mode .page-content h2 {
+    background: linear-gradient(135deg, #1a1a1a 0%, #8a2be2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===================================
+   7. CONTACT PAGE SPECIFIC STYLES
+   =================================== */
+
+/* Contact page uses same .page-content styles as Projects */
+/* Add custom contact styles here when building contact form */
+
+/* ===================================
+   8. RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 968px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .title-section {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center;
+    }
+
+    .card-1 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .card-2 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .card-stack {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .blob-1, .blob-2, .blob-3 {
+        width: 60vw;
+        height: 60vw;
+    }
+}
+
+/* ===================================
+   END OF STYLESHEET
+   =================================== */

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Portfolio</title>
+    <link rel="stylesheet" href="content/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mode-toggle" onclick="toggleMode()">
+                <span class="mode-icon" id="mode-icon">☀️</span>
+                <span id="mode-text">Light</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <section class="hero">
+            <!-- Animated Glass Blobs -->
+            <div class="glass-blob blob-1"></div>
+            <div class="glass-blob blob-2"></div>
+            <div class="glass-blob blob-3"></div>
+
+            <!-- Home Content Grid -->
+            <div class="content">
+                <!-- Top Left: Title Section -->
+                <div class="title-section">
+                    <h1>Creative Developer</h1>
+                    <p class="subtitle">Crafting digital experiences that inspire</p>
+                </div>
+
+                <!-- Top Right: About Card -->
+                <div class="glass-card card-1">
+                    <h3>About Me</h3>
+                    <p>I'm a designer and developer passionate about creating beautiful, functional experiences that blur the line between art and technology. With a focus on modern web technologies and user-centered design, I bring ideas to life through code.</p>
+                    <a href="#" class="cta-button">View My Work</a>
+                </div>
+
+                <!-- Bottom Left: What I Do Card -->
+                <div class="glass-card card-2">
+                    <h3>What I Do</h3>
+                    <p>I specialize in building responsive web applications, interactive experiences, and design systems that scale. From concept to deployment, I handle the full creative and technical process to deliver products that perform beautifully across all devices.</p>
+                    <button class="dropdown-toggle" onclick="toggleDropdown(this)">Learn More</button>
+                    <div class="dropdown-content">
+                        <p>My approach combines cutting-edge frontend frameworks, performance optimization, and accessibility best practices. I work with React, Vue, and vanilla JavaScript to create experiences that are both delightful and maintainable.</p>
+                    </div>
+                </div>
+
+                <!-- Bottom Right: Stacked Cards -->
+                <div class="card-stack">
+                    <!-- Skills Card -->
+                    <div class="glass-card">
+                        <h3>Skills & Tools</h3>
+                        <p>React, Vue, JavaScript, CSS, HTML, Figma, Git</p>
+                        <button class="dropdown-toggle" onclick="toggleDropdown(this)">View Details</button>
+                        <div class="dropdown-content">
+                            <p>I'm proficient in modern JavaScript frameworks, responsive design, animation libraries, version control, and design tools. I stay current with web standards and continuously explore emerging technologies to deliver cutting-edge solutions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Experience Card -->
+                    <div class="glass-card">
+                        <h3>Experience</h3>
+                        <p>5+ years building digital products for startups and agencies</p>
+                        <button class="dropdown-toggle" onclick="toggleDropdown(this)">Read More</button>
+                        <div class="dropdown-content">
+                            <p>I've collaborated with cross-functional teams to ship products used by thousands of users. My experience spans e-commerce platforms, SaaS applications, marketing websites, and interactive installations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Connect Card -->
+                    <div class="glass-card">
+                        <h3>Let's Connect</h3>
+                        <p>Open for freelance projects and collaborations</p>
+                        <button class="dropdown-toggle" onclick="toggleDropdown(this)">Get In Touch</button>
+                        <div class="dropdown-content">
+                            <p>Whether you have a project in mind, need consulting, or just want to chat about web development and design, I'd love to hear from you. Drop me a message and let's create something amazing together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Dropdown toggle functionality
+        function toggleDropdown(button) {
+            button.classList.toggle('active');
+            button.nextElementSibling.classList.toggle('active');
+        }
+
+        // Light/Dark mode toggle
+        function toggleMode() {
+            document.body.classList.toggle('light-mode');
+            const modeText = document.getElementById('mode-text');
+            const modeIcon = document.getElementById('mode-icon');
+            
+            if (document.body.classList.contains('light-mode')) {
+                modeText.textContent = 'Dark';
+                modeIcon.textContent = '🌙';
+            } else {
+                modeText.textContent = 'Light';
+                modeIcon.textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>
