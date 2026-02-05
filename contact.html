@@ -13,7 +13,7 @@
             <ul class="nav-links">
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.html" class="active">Contact</a></li>
             </ul>
             <button class="mode-toggle" onclick="toggleMode()">
                 <span class="mode-icon" id="mode-icon">☀️</span>
@@ -25,14 +25,72 @@
     <!-- Main Container -->
     <div class="container">
         <section class="hero">
-            <!-- Animated Glass Blobs -->
+            <!-- Animated Glass Blobs Background -->
             <div class="glass-blob blob-1"></div>
             <div class="glass-blob blob-2"></div>
             <div class="glass-blob blob-3"></div>
 
             <!-- Contact Page Content -->
             <div class="page-content">
-                <h2>Contact Coming Soon</h2>
+                <h2>Get In Touch</h2>
+
+                <!-- Carousel Container -->
+                <div class="carousel">
+                    <!-- Fluid Blob Backgrounds -->
+                    <div class="fluid-blob github"></div>
+                    <div class="fluid-blob instagram"></div>
+                    <div class="fluid-blob linkedin"></div>
+                    <div class="fluid-blob contact"></div>
+                    <div class="fluid-blob gmail"></div>
+
+                    <!-- GitHub Icon -->
+                    <div class="contact-icon-github" onclick="toggleContact(this, 'github')">
+                        <span>💻</span>
+                        <div class="contact-details" id="github-details">
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
+                            <p>Check out my open source projects and contributions</p>
+                        </div>
+                    </div>
+
+                    <!-- Instagram Icon -->
+                    <div class="contact-icon-instagram" onclick="toggleContact(this, 'instagram')">
+                        <span>📸</span>
+                        <div class="contact-details coming-soon" id="instagram-details">
+                            <h4>Instagram</h4>
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+
+                    <!-- LinkedIn Icon -->
+                    <div class="contact-icon-linkedin" onclick="toggleContact(this, 'linkedin')">
+                        <span>💼</span>
+                        <div class="contact-details" id="linkedin-details">
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://linkedin.com/in/yourprofile" target="_blank">Connect with me</a></p>
+                            <p>Let's network and collaborate professionally</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone/Contact Icon -->
+                    <div class="contact-icon-contact" onclick="toggleContact(this, 'contact')">
+                        <span>📞</span>
+                        <div class="contact-details coming-soon" id="contact-details">
+                            <h4>Phone</h4>
+                            <p>Coming Soon</p>
+                        </div>
+                    </div>
+
+                    <!-- Gmail Icon -->
+                    <div class="contact-icon-gmail" onclick="toggleContact(this, 'gmail')">
+                        <span>✉️</span>
+                        <div class="contact-details" id="gmail-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:your.email@gmail.com">your.email@gmail.com</a></p>
+                            <p>Drop me a message anytime!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
@@ -53,6 +111,42 @@
                 modeIcon.textContent = '☀️';
             }
         }
+
+        // Contact icon toggle functionality
+        let currentActive = null;
+
+        function toggleContact(element, type) {
+            const details = element.querySelector('.contact-details');
+            
+            // If clicking the same icon, close it
+            if (currentActive === element) {
+                element.classList.remove('active');
+                details.classList.remove('active');
+                currentActive = null;
+                return;
+            }
+            
+            // Close previously active
+            if (currentActive) {
+                currentActive.classList.remove('active');
+                currentActive.querySelector('.contact-details').classList.remove('active');
+            }
+            
+            // Open clicked icon
+            element.classList.add('active');
+            details.classList.add('active');
+            currentActive = element;
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const carousel = document.querySelector('.carousel');
+            if (!carousel.contains(event.target) && currentActive) {
+                currentActive.classList.remove('active');
+                currentActive.querySelector('.contact-details').classList.remove('active');
+                currentActive = null;
+            }
+        });
     </script>
 </body>
 </html>
