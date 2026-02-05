@@ -236,6 +236,40 @@ body.light-mode .glass-blob {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================================
    5. INDEX PAGE SPECIFIC STYLES
    =================================== */
@@ -537,6 +571,57 @@ body.light-mode .glass-card p {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================================
    6. PROJECTS PAGE SPECIFIC STYLES
    =================================== */
@@ -567,9 +652,49 @@ body.light-mode .page-content h2 {
     background-clip: text;
 }
 
-/* ===================================
-   7. CONTACT PAGE SPECIFIC STYLES
-   =================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================================
    7. CONTACT PAGE SPECIFIC STYLES
    =================================== */
@@ -582,7 +707,6 @@ body.light-mode .page-content h2 {
     max-width: 1200px;
 }
 
-/* Hide default "Coming Soon" when carousel is present */
 .page-content h2 {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 300;
@@ -591,6 +715,7 @@ body.light-mode .page-content h2 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 4rem;
+    text-align: center;
 }
 
 body.light-mode .page-content h2 {
@@ -605,92 +730,152 @@ body.light-mode .page-content h2 {
     position: relative;
     width: 100%;
     max-width: 800px;
-    height: clamp(400px, 50vh, 500px);
+    height: clamp(500px, 60vh, 600px);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Circular Icon Containers - Arranged in Circle */
-.carousel>div[class^="contact-icon-"] {
-    position: absolute;
-    width: clamp(80px, 12vw, 120px);
-    height: clamp(80px, 12vw, 120px);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10;
-}
-
-/* Individual Icon Positions (Circular Layout) */
-.contact-icon-github {
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.contact-icon-instagram {
-    top: 20%;
-    right: 10%;
-    transform: translate(0, 0);
-}
-
-.contact-icon-linkedin {
-    bottom: 20%;
-    right: 10%;
-    transform: translate(0, 0);
-}
-
-.contact-icon-contact {
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.contact-icon-gmail {
-    top: 20%;
-    left: 10%;
-    transform: translate(0, 0);
-}
-
-/* Glass Circle for Each Icon */
+/* Base Circular Icon Style */
 .contact-icon-github,
 .contact-icon-instagram,
 .contact-icon-linkedin,
 .contact-icon-contact,
 .contact-icon-gmail {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.1) 0%,
-            rgba(255, 255, 255, 0.05) 50%,
-            rgba(255, 255, 255, 0) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-        inset 0 0 0 3px rgba(0, 0, 0, 0.1),
-        0 8px 32px rgba(138, 43, 226, 0.2);
+    position: absolute;
+    width: clamp(90px, 14vw, 130px);
+    height: clamp(90px, 14vw, 130px);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(2rem, 4vw, 3rem);
-    position: relative;
-    overflow: visible;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-body.light-mode .contact-icon-github,
-body.light-mode .contact-icon-instagram,
-body.light-mode .contact-icon-linkedin,
-body.light-mode .contact-icon-contact,
-body.light-mode .contact-icon-gmail {
-    background: linear-gradient(135deg,
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0.05) 50%,
-            rgba(0, 0, 0, 0) 100%);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    box-shadow:
-        inset 0 0 0 3px rgba(255, 255, 255, 0.3),
-        0 8px 32px rgba(138, 43, 226, 0.15);
+/* GitHub - Dark Gray/Black */
+.contact-icon-github {
+    background: linear-gradient(135deg, 
+        rgba(36, 41, 46, 0.7) 0%,
+        rgba(36, 41, 46, 0.5) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-icon-github:hover {
+    background: linear-gradient(135deg, 
+        rgba(36, 41, 46, 0.95) 0%,
+        rgba(36, 41, 46, 0.8) 100%
+    );
+    border-color: rgba(36, 41, 46, 0.8);
+}
+
+/* Instagram - Gradient (Purple/Pink/Orange) */
+.contact-icon-instagram {
+    background: linear-gradient(135deg, 
+        rgba(131, 58, 180, 0.6) 0%,
+        rgba(253, 29, 29, 0.6) 50%,
+        rgba(252, 176, 69, 0.6) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-icon-instagram:hover {
+    background: linear-gradient(135deg, 
+        rgba(131, 58, 180, 0.95) 0%,
+        rgba(253, 29, 29, 0.95) 50%,
+        rgba(252, 176, 69, 0.95) 100%
+    );
+    border-color: rgba(253, 29, 29, 0.8);
+}
+
+/* LinkedIn - Blue */
+.contact-icon-linkedin {
+    background: linear-gradient(135deg, 
+        rgba(0, 119, 181, 0.7) 0%,
+        rgba(0, 119, 181, 0.5) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-icon-linkedin:hover {
+    background: linear-gradient(135deg, 
+        rgba(0, 119, 181, 0.95) 0%,
+        rgba(0, 119, 181, 0.8) 100%
+    );
+    border-color: rgba(0, 119, 181, 0.8);
+}
+
+/* Phone/Contact - Green */
+.contact-icon-contact {
+    background: linear-gradient(135deg, 
+        rgba(37, 211, 102, 0.7) 0%,
+        rgba(37, 211, 102, 0.5) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-icon-contact:hover {
+    background: linear-gradient(135deg, 
+        rgba(37, 211, 102, 0.95) 0%,
+        rgba(37, 211, 102, 0.8) 100%
+    );
+    border-color: rgba(37, 211, 102, 0.8);
+}
+
+/* Gmail - Red */
+.contact-icon-gmail {
+    background: linear-gradient(135deg, 
+        rgba(234, 67, 53, 0.7) 0%,
+        rgba(234, 67, 53, 0.5) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-icon-gmail:hover {
+    background: linear-gradient(135deg, 
+        rgba(234, 67, 53, 0.95) 0%,
+        rgba(234, 67, 53, 0.8) 100%
+    );
+    border-color: rgba(234, 67, 53, 0.8);
+}
+
+/* Icon Positions (More Spacing) */
+.contact-icon-github {
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.contact-icon-instagram {
+    top: 25%;
+    right: 8%;
+}
+
+.contact-icon-linkedin {
+    bottom: 25%;
+    right: 8%;
+}
+
+.contact-icon-contact {
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.contact-icon-gmail {
+    top: 25%;
+    left: 8%;
 }
 
 /* Animated Border for Icons */
@@ -701,18 +886,19 @@ body.light-mode .contact-icon-gmail {
 .contact-icon-gmail::before {
     content: '';
     position: absolute;
-    inset: -2px;
+    inset: -3px;
     border-radius: 50%;
-    padding: 2px;
-    background: linear-gradient(90deg,
-            rgba(255, 255, 255, 0.5) 0%,
-            rgba(138, 43, 226, 0.8) 25%,
-            rgba(255, 255, 255, 0.3) 50%,
-            rgba(138, 43, 226, 0.8) 75%,
-            rgba(255, 255, 255, 0.5) 100%);
+    padding: 3px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0.6) 0%,
+        rgba(138, 43, 226, 0.9) 25%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(138, 43, 226, 0.9) 75%,
+        rgba(255, 255, 255, 0.6) 100%
+    );
     background-size: 200% 100%;
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -732,147 +918,139 @@ body.light-mode .contact-icon-gmail {
 
 /* Hover Effects */
 .contact-icon-github:hover,
-.contact-icon-instagram:hover,
-.contact-icon-linkedin:hover,
-.contact-icon-contact:hover,
-.contact-icon-gmail:hover {
-    transform: translate(-50%, 0) scale(1.15);
-    box-shadow:
-        inset 0 0 0 3px rgba(0, 0, 0, 0.15),
-        0 12px 48px rgba(138, 43, 226, 0.4);
+.contact-icon-contact:hover {
+    transform: translate(-50%, 0) scale(1.1);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }
 
 .contact-icon-instagram:hover,
 .contact-icon-linkedin:hover,
 .contact-icon-gmail:hover {
-    transform: scale(1.15);
+    transform: scale(1.1);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }
 
 /* Active/Expanded State */
 .contact-icon-github.active,
-.contact-icon-instagram.active,
-.contact-icon-linkedin.active,
-.contact-icon-contact.active,
-.contact-icon-gmail.active {
-    transform: translate(-50%, 0) scale(1.2);
-    z-index: 100;
+.contact-icon-contact.active {
+    transform: translate(-50%, 0) scale(1.15);
+    z-index: 1000;
 }
 
 .contact-icon-instagram.active,
 .contact-icon-linkedin.active,
 .contact-icon-gmail.active {
-    transform: scale(1.2);
+    transform: scale(1.15);
+    z-index: 1000;
 }
 
 /* Fluid Blob Backgrounds */
 .fluid-blob {
     position: absolute;
     border-radius: 50% 40% 60% 50%;
-    filter: blur(60px);
-    opacity: 0.3;
+    filter: blur(70px);
+    opacity: 0.25;
     pointer-events: none;
     animation: blobFloat 15s ease-in-out infinite;
     z-index: 0;
 }
 
 .fluid-blob.github {
-    width: clamp(150px, 20vw, 250px);
-    height: clamp(150px, 20vw, 250px);
-    background: rgba(138, 43, 226, 0.4);
-    top: -5%;
+    width: clamp(180px, 22vw, 280px);
+    height: clamp(180px, 22vw, 280px);
+    background: rgba(36, 41, 46, 0.4);
+    top: 0%;
     left: 45%;
     animation-delay: 0s;
 }
 
 .fluid-blob.instagram {
-    width: clamp(140px, 18vw, 220px);
-    height: clamp(140px, 18vw, 220px);
-    background: linear-gradient(45deg, rgba(138, 43, 226, 0.3), rgba(255, 0, 150, 0.3));
-    top: 15%;
-    right: 5%;
+    width: clamp(170px, 20vw, 250px);
+    height: clamp(170px, 20vw, 250px);
+    background: linear-gradient(45deg, rgba(131, 58, 180, 0.4), rgba(253, 29, 29, 0.4));
+    top: 20%;
+    right: 3%;
     animation-delay: -3s;
 }
 
 .fluid-blob.linkedin {
-    width: clamp(140px, 18vw, 220px);
-    height: clamp(140px, 18vw, 220px);
-    background: rgba(0, 119, 181, 0.3);
-    bottom: 15%;
-    right: 5%;
+    width: clamp(170px, 20vw, 250px);
+    height: clamp(170px, 20vw, 250px);
+    background: rgba(0, 119, 181, 0.4);
+    bottom: 20%;
+    right: 3%;
     animation-delay: -6s;
 }
 
 .fluid-blob.contact {
-    width: clamp(150px, 20vw, 250px);
-    height: clamp(150px, 20vw, 250px);
-    background: rgba(138, 43, 226, 0.4);
-    bottom: -5%;
+    width: clamp(180px, 22vw, 280px);
+    height: clamp(180px, 22vw, 280px);
+    background: rgba(37, 211, 102, 0.4);
+    bottom: 0%;
     left: 45%;
     animation-delay: -9s;
 }
 
 .fluid-blob.gmail {
-    width: clamp(140px, 18vw, 220px);
-    height: clamp(140px, 18vw, 220px);
-    background: rgba(234, 67, 53, 0.3);
-    top: 15%;
-    left: 5%;
+    width: clamp(170px, 20vw, 250px);
+    height: clamp(170px, 20vw, 250px);
+    background: rgba(234, 67, 53, 0.4);
+    top: 20%;
+    left: 3%;
     animation-delay: -12s;
 }
 
 @keyframes blobFloat {
-
-    0%,
-    100% {
+    0%, 100% {
         border-radius: 50% 40% 60% 50%;
         transform: translate(0, 0) scale(1);
     }
-
     33% {
         border-radius: 40% 60% 50% 60%;
         transform: translate(2vw, 2vh) scale(1.1);
     }
-
     66% {
         border-radius: 60% 50% 40% 50%;
         transform: translate(-2vw, 1vh) scale(0.9);
     }
 }
 
-/* Contact Details Dropdown */
+/* Contact Details Dropdown - OVERLAYS OVER EVERYTHING */
 .contact-details {
     position: absolute;
-    top: 120%;
+    top: 130%;
     left: 50%;
     transform: translateX(-50%) translateY(-20px);
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.12) 0%,
-            rgba(255, 255, 255, 0.06) 50%,
-            rgba(255, 255, 255, 0.02) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 100%
+    );
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, 0.25);
     border-radius: clamp(1rem, 2vw, 1.5rem);
-    padding: clamp(1rem, 2vw, 1.5rem);
-    min-width: clamp(200px, 30vw, 300px);
-    box-shadow:
-        inset 0 0 0 4px rgba(0, 0, 0, 0.1),
-        0 10px 40px rgba(0, 0, 0, 0.3);
+    padding: clamp(1.2rem, 2.5vw, 1.8rem);
+    min-width: clamp(220px, 35vw, 320px);
+    box-shadow: 
+        inset 0 0 0 5px rgba(0, 0, 0, 0.12),
+        0 15px 60px rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 1000;
+    z-index: 2000;
 }
 
 body.light-mode .contact-details {
-    background: linear-gradient(135deg,
-            rgba(0, 0, 0, 0.12) 0%,
-            rgba(0, 0, 0, 0.06) 50%,
-            rgba(0, 0, 0, 0.02) 100%);
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    box-shadow:
-        inset 0 0 0 4px rgba(255, 255, 255, 0.3),
-        0 10px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.08) 50%,
+        rgba(0, 0, 0, 0.03) 100%
+    );
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 
+        inset 0 0 0 5px rgba(255, 255, 255, 0.4),
+        0 15px 60px rgba(0, 0, 0, 0.3);
 }
 
 .contact-details.active {
@@ -882,31 +1060,34 @@ body.light-mode .contact-details {
 }
 
 .contact-details h4 {
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
     color: #8a2be2;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
     font-weight: 600;
 }
 
 .contact-details p {
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 0.5rem;
+    font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.6rem;
     word-break: break-word;
+    line-height: 1.6;
 }
 
 body.light-mode .contact-details p {
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.75);
 }
 
 .contact-details a {
     color: #8a2be2;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .contact-details a:hover {
     color: #fff;
+    text-decoration: underline;
 }
 
 body.light-mode .contact-details a:hover {
@@ -930,7 +1111,8 @@ body.light-mode .contact-details.coming-soon p {
 /* Responsive Design for Contact Page */
 @media (max-width: 768px) {
     .carousel {
-        height: clamp(350px, 45vh, 450px);
+        height: clamp(400px, 50vh, 500px);
+        max-width: 650px;
     }
 
     .contact-icon-github,
@@ -938,17 +1120,17 @@ body.light-mode .contact-details.coming-soon p {
     .contact-icon-linkedin,
     .contact-icon-contact,
     .contact-icon-gmail {
-        width: clamp(70px, 15vw, 100px);
-        height: clamp(70px, 15vw, 100px);
-        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        width: clamp(75px, 16vw, 110px);
+        height: clamp(75px, 16vw, 110px);
+        font-size: clamp(2rem, 6vw, 2.8rem);
     }
 
     .contact-details {
-        min-width: clamp(180px, 70vw, 280px);
+        min-width: clamp(200px, 75vw, 300px);
     }
 
     .fluid-blob {
-        filter: blur(40px);
+        filter: blur(50px);
     }
 }
 

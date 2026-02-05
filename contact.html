@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Portfolio</title>
     <link rel="stylesheet" href="content/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <nav>
@@ -45,7 +48,7 @@
 
                     <!-- GitHub Icon -->
                     <div class="contact-icon-github" onclick="toggleContact(this, 'github')">
-                        <span>💻</span>
+                        <i class="fa-brands fa-github"></i>
                         <div class="contact-details" id="github-details">
                             <h4>GitHub</h4>
                             <p><a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
@@ -55,7 +58,7 @@
 
                     <!-- Instagram Icon -->
                     <div class="contact-icon-instagram" onclick="toggleContact(this, 'instagram')">
-                        <span>📸</span>
+                        <i class="fa-brands fa-instagram"></i>
                         <div class="contact-details coming-soon" id="instagram-details">
                             <h4>Instagram</h4>
                             <p>Coming Soon</p>
@@ -64,7 +67,7 @@
 
                     <!-- LinkedIn Icon -->
                     <div class="contact-icon-linkedin" onclick="toggleContact(this, 'linkedin')">
-                        <span>💼</span>
+                        <i class="fa-brands fa-linkedin-in"></i>
                         <div class="contact-details" id="linkedin-details">
                             <h4>LinkedIn</h4>
                             <p><a href="https://linkedin.com/in/yourprofile" target="_blank">Connect with me</a></p>
@@ -74,7 +77,7 @@
 
                     <!-- Phone/Contact Icon -->
                     <div class="contact-icon-contact" onclick="toggleContact(this, 'contact')">
-                        <span>📞</span>
+                        <i class="fa-solid fa-phone"></i>
                         <div class="contact-details coming-soon" id="contact-details">
                             <h4>Phone</h4>
                             <p>Coming Soon</p>
@@ -83,7 +86,7 @@
 
                     <!-- Gmail Icon -->
                     <div class="contact-icon-gmail" onclick="toggleContact(this, 'gmail')">
-                        <span>✉️</span>
+                        <i class="fa-solid fa-envelope"></i>
                         <div class="contact-details" id="gmail-details">
                             <h4>Email</h4>
                             <p><a href="mailto:your.email@gmail.com">your.email@gmail.com</a></p>
@@ -102,7 +105,7 @@
             document.body.classList.toggle('light-mode');
             const modeText = document.getElementById('mode-text');
             const modeIcon = document.getElementById('mode-icon');
-            
+
             if (document.body.classList.contains('light-mode')) {
                 modeText.textContent = 'Dark';
                 modeIcon.textContent = '🌙';
@@ -117,7 +120,7 @@
 
         function toggleContact(element, type) {
             const details = element.querySelector('.contact-details');
-            
+
             // If clicking the same icon, close it
             if (currentActive === element) {
                 element.classList.remove('active');
@@ -125,13 +128,13 @@
                 currentActive = null;
                 return;
             }
-            
+
             // Close previously active
             if (currentActive) {
                 currentActive.classList.remove('active');
                 currentActive.querySelector('.contact-details').classList.remove('active');
             }
-            
+
             // Open clicked icon
             element.classList.add('active');
             details.classList.add('active');
@@ -139,7 +142,7 @@
         }
 
         // Close dropdown when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             const carousel = document.querySelector('.carousel');
             if (!carousel.contains(event.target) && currentActive) {
                 currentActive.classList.remove('active');
@@ -149,4 +152,5 @@
         });
     </script>
 </body>
+
 </html>
