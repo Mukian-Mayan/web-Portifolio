@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio</title>
     <link rel="stylesheet" href="content/style.css">
 </head>
+
 <body>
 
     <nav>
@@ -19,7 +21,7 @@
                 <span class="mode-icon" id="mode-icon">☀️</span>
                 <span id="mode-text">Light</span>
             </button>
-            
+
         </div>
     </nav>
 
@@ -42,8 +44,10 @@
 
                 <div class="glass-card card-1">
                     <h3>About Me</h3>
-                    <div class="img">                     <img src="content/images/0934.jpg" alt="">      </div>
-                    <p>I'm a designer and developer passionate about creating beautiful, functional experiences that blur the line between art and technology. With a focus on modern web technologies and user-centered design, I bring ideas to life through code.</p>
+                    <div class="img"> <img src="content/images/0934.jpg" alt=""> </div>
+                    <p>I'm a designer and developer passionate about creating beautiful, functional experiences that
+                        blur the line between art and technology. With a focus on modern web technologies and
+                        user-centered design, I bring ideas to life through code.</p>
                     <a href="/projects.html" class="cta-button">View My Work</a>
                 </div>
 
@@ -51,10 +55,14 @@
 
                 <div class="glass-card card-2">
                     <h3>What I Do</h3>
-                    <p>I specialize in building responsive web applications, interactive Algorithm and design and design systems that scale From concept to deployment, I handle the full creative and technical process to deliver cross platform and cross device software.</p>
+                    <p>I specialize in building responsive web applications, interactive Algorithm and design and design
+                        systems that scale From concept to deployment, I handle the full creative and technical process
+                        to deliver cross platform and cross device software.</p>
                     <button class="dropdown-toggle" onclick="toggleDropdown(this)">Learn More</button>
                     <div class="dropdown-content">
-                        <p>My approach combines cutting-edge frontend frameworks, performance optimization, and accessibility best practices. I work with React, Vue, and vanilla JavaScript to create experiences that are both delightful and maintainable.</p>
+                        <p>My approach combines cutting-edge frontend frameworks, performance optimization, and
+                            accessibility best practices. I work with React, Vue, and vanilla JavaScript to create
+                            experiences that are both delightful and maintainable.</p>
                     </div>
                 </div>
 
@@ -66,7 +74,9 @@
                         <p>Flutter, dart, React, JavaScript, CSS, HTML, Figma, Git, IOT development, ...</p>
                         <button class="dropdown-toggle" onclick="toggleDropdown(this)">View Details</button>
                         <div class="dropdown-content">
-                            <p>I'm proficient in modern JavaScript frameworks, responsive design, animation libraries, version control, and design tools. I stay current with web standards and continuously explore emerging technologies to deliver cutting-edge solutions.</p>
+                            <p>I'm proficient in modern JavaScript frameworks, responsive design, animation libraries,
+                                version control, and design tools. I stay current with web standards and continuously
+                                explore emerging technologies to deliver cutting-edge solutions.</p>
                         </div>
                     </div>
 
@@ -76,7 +86,9 @@
                         <p>2+ years building digital products for startups </p>
                         <button class="dropdown-toggle" onclick="toggleDropdown(this)">Read More</button>
                         <div class="dropdown-content">
-                            <p>I've collaborated with cross-functional teams to ship products used by thousands of users. My experience spans e-commerce platforms, SaaS applications, marketing websites, and interactive installations.</p>
+                            <p>I've collaborated with cross-functional teams to ship products used by thousands of
+                                users. My experience spans e-commerce platforms, SaaS applications, marketing websites,
+                                and interactive installations.</p>
                         </div>
                     </div>
 
@@ -86,7 +98,9 @@
                         <p>Open for freelance projects and collaborations</p>
                         <button class="dropdown-toggle" onclick="toggleDropdown(this)">Get In Touch</button>
                         <div class="dropdown-content">
-                            <p>Whether you have a project in mind, need consulting, or just want to chat about web development and design, I'd love to hear from you. Drop me a message and let's create something amazing together.</p>
+                            <p>Whether you have a project in mind, need consulting, or just want to chat about web
+                                development and design, I'd love to hear from you. Drop me a message and let's create
+                                something amazing together.</p>
                         </div>
                     </div>
                 </div>
@@ -96,18 +110,18 @@
 
 
     <script>
-        
+
         function toggleDropdown(button) {
             button.classList.toggle('active');
             button.nextElementSibling.classList.toggle('active');
         }
 
-        
+
         function toggleMode() {
             document.body.classList.toggle('light-mode');
             const modeText = document.getElementById('mode-text');
             const modeIcon = document.getElementById('mode-icon');
-            
+
             if (document.body.classList.contains('light-mode')) {
                 modeText.textContent = 'Dark';
                 modeIcon.textContent = '🌙';
@@ -118,4 +132,5 @@
         }
     </script>
 </body>
+
 </html>
